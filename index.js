@@ -40,25 +40,19 @@ function reduceToTotal(sourceArray, startingPoint = 0){
 }
 
 function reduceToAllTrue(sourceArray){
-    let value
     for(let i= 0; i < sourceArray.length; i++){
         if (!sourceArray[i]){
-        value = false
-        } else if (sourceArray[i]){
-        value = true
-        }
+        return false
+        } 
     }
-    return value
+    return true
 }
 
 function reduceToAnyTrue(sourceArray){
-    let value
     for(let i= 0; i < sourceArray.length; i++){
-        if (!sourceArray[i]){
-        value = false
-        } else if (sourceArray[i]){
-        value = true
+        if (sourceArray[i]){
+        return true
         }
     }
-    return value
+    return false
 }

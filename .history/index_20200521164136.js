@@ -7,22 +7,6 @@ function mapToNegativize(num){
       return negNum
     }
 
-    function mapToSquare(num) {
-        let r = []
-        for (let i = 0; i < num.length; i++ ) {
-          r.push(num[i] * num[i])
-        }
-        return r
-      }
-
-      function mapToDouble(src) {
-        let r = []
-        for (let i = 0; i < src.length; i++ ) {
-          r.push(2 * src[i])
-        }
-        return r
-      }
-
 
     function mapToNoChange(num) {
         let r = []
@@ -53,5 +37,3 @@ function mapToNegativize(num){
         }
         return total
       }
-
-      

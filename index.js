@@ -1,51 +1,56 @@
+// import { start } from "repl"
+
 function mapToNegativize(sourceArray) {
-  return sourceArray.map(int => {
-    if (int < 0) {
-      return Math.abs(int)
-    }
-    else
-      return -Math.abs(int)
-  })
+  let newArr = []
+  for (let i = 0; i < sourceArray.length; i++) {
+    newArr.push(sourceArray[i] - sourceArray[i] * 2)
+  }
+  return newArr
 }
 function mapToNoChange(sourceArray) {
-  return sourceArray.map(int => int)
+  let newArr = []
+  for (let i = 0; i < sourceArray.length; i++) {
+    newArr.push(sourceArray[i])
+  }
+  return newArr
 }
 function mapToDouble(sourceArray) {
-  return sourceArray.map(int => int *= 2)
+  let newArr = []
+  for (let i = 0; i < sourceArray.length; i++) {
+    newArr.push(sourceArray[i] * 2)
+  }
+  return newArr
 }
 
 function mapToSquare(sourceArray) {
-  return sourceArray.map(int => int ** 2)
+  let newArr = []
+  for (let i = 0; i < sourceArray.length; i++) {
+    newArr.push(sourceArray[i] ** 2)
+  }
+  return newArr
 }
-function reduceToTotal(arr, starting_point) {
-  let reduced = arr.reduce((accumulator, arrayIndex) => accumulator + arrayIndex, 0)
-  if (starting_point)
-    return reduced + starting_point
-  else
-    return reduced
+function reduceToTotal(arr, starting_point = 0) {
+  let count = starting_point
+  for (let i = 0; i < arr.length; i++) {
+    count += arr[i]
+  }
+  return count
 }
 
 function reduceToAllTrue(arr) {
-  let count = 0
-  arr.forEach(bool => {
-    if (Boolean(bool) === true) {
-      count += 1;
+  for (let i = 0; i < arr.length; i++) {
+    if (!arr[i]) {
+      return false
     }
-  })
-  if (arr.length === count) {
-    return true
   }
-  return false
+  return true
 }
 function reduceToAnyTrue(arr) {
-  let count = 0;
-  arr.forEach(bool => {
-    if (Boolean(bool) === true) {
-      count += 1;
+  for (let i = 0; i < arr.length; i++) {
+    debugger
+    if (arr[i]) {
+      return true
     }
-  })
-  if (count >= 1) {
-    return true
   }
   return false
 }
